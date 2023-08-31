@@ -37,6 +37,7 @@ MANIFEST
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+chapter02/my_california_housing_model.pkl
 
 # Unit test / coverage reports
 htmlcov/
