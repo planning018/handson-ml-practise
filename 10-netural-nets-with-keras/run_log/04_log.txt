@@ -1,0 +1,54 @@
+/home/ops/miniconda3/envs/tf2.13/bin/python3 /home/data/yxc-data/handson-ml-practise/10-netural-nets-with-keras/04_regression_mlp_keras_sequential.py
+2023-09-06 17:20:02.903571: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-06 17:20:03.014370: I tensorflow/tsl/cuda/cudart_stub.cc:28] Could not find cuda drivers on your machine, GPU will not be used.
+2023-09-06 17:20:04.446290: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+Tensorflow version:  2.13.0
+Epoch 1/20
+363/363 [==============================] - 3s 4ms/step - loss: 0.8240 - root_mean_squared_error: 0.9077 - val_loss: 0.6188 - val_root_mean_squared_error: 0.7866
+Epoch 2/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.3750 - root_mean_squared_error: 0.6124 - val_loss: 1.6874 - val_root_mean_squared_error: 1.2990
+Epoch 3/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.3649 - root_mean_squared_error: 0.6041 - val_loss: 0.4665 - val_root_mean_squared_error: 0.6830
+Epoch 4/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.3411 - root_mean_squared_error: 0.5840 - val_loss: 0.5680 - val_root_mean_squared_error: 0.7536
+Epoch 5/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.3332 - root_mean_squared_error: 0.5772 - val_loss: 0.5344 - val_root_mean_squared_error: 0.7310
+Epoch 6/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.3216 - root_mean_squared_error: 0.5671 - val_loss: 1.2473 - val_root_mean_squared_error: 1.1168
+Epoch 7/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.3239 - root_mean_squared_error: 0.5691 - val_loss: 0.4591 - val_root_mean_squared_error: 0.6776
+Epoch 8/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.3057 - root_mean_squared_error: 0.5529 - val_loss: 0.6003 - val_root_mean_squared_error: 0.7748
+Epoch 9/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.3031 - root_mean_squared_error: 0.5505 - val_loss: 0.5908 - val_root_mean_squared_error: 0.7686
+Epoch 10/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.2963 - root_mean_squared_error: 0.5443 - val_loss: 0.4696 - val_root_mean_squared_error: 0.6853
+Epoch 11/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.2888 - root_mean_squared_error: 0.5374 - val_loss: 0.2890 - val_root_mean_squared_error: 0.5376
+Epoch 12/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.2924 - root_mean_squared_error: 0.5408 - val_loss: 0.3230 - val_root_mean_squared_error: 0.5683
+Epoch 13/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.2807 - root_mean_squared_error: 0.5298 - val_loss: 0.3134 - val_root_mean_squared_error: 0.5598
+Epoch 14/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.2797 - root_mean_squared_error: 0.5289 - val_loss: 0.2952 - val_root_mean_squared_error: 0.5433
+Epoch 15/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.2799 - root_mean_squared_error: 0.5290 - val_loss: 0.2850 - val_root_mean_squared_error: 0.5338
+Epoch 16/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.2754 - root_mean_squared_error: 0.5248 - val_loss: 0.2828 - val_root_mean_squared_error: 0.5318
+Epoch 17/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.2731 - root_mean_squared_error: 0.5226 - val_loss: 0.6000 - val_root_mean_squared_error: 0.7746
+Epoch 18/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.2706 - root_mean_squared_error: 0.5202 - val_loss: 0.3020 - val_root_mean_squared_error: 0.5496
+Epoch 19/20
+363/363 [==============================] - 1s 3ms/step - loss: 0.2682 - root_mean_squared_error: 0.5179 - val_loss: 0.2925 - val_root_mean_squared_error: 0.5408
+Epoch 20/20
+363/363 [==============================] - 1s 2ms/step - loss: 0.2702 - root_mean_squared_error: 0.5198 - val_loss: 0.4296 - val_root_mean_squared_error: 0.6554
+162/162 [==============================] - 0s 1ms/step - loss: 0.2890 - root_mean_squared_error: 0.5376
+1/1 [==============================] - 0s 102ms/step
+RMSE test result is:  0.5377510190010071
+y_predictions is :  [[0.5465708]
+ [1.0796503]
+ [5.270611 ]]
+y_test is:  [0.477   0.458   5.00001]
+
+Process finished with exit code 0

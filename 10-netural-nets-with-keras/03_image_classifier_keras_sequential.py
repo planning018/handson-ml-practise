@@ -16,8 +16,9 @@ fashion_mnist = tf.keras.datasets.fashion_mnist.load_data()
 X_train, y_train = X_train_full[:-5000], y_train_full[:-5000]
 X_valid, y_valid = X_train_full[-5000:], y_train_full[-5000:]
 
-print("X_train.shape is: %s, X_train.dtype is %s, y_train is %x"
-      .format(X_train.shape, X_train.dtype, y_train))
+print("X_train.shape is: \n", X_train.shape)
+print("X_train.dtype is: \n", X_train.dtype)
+print("y_train is: \n", y_train)
 
 # let's scale the pixel intensities down the 0-1 range
 X_train, X_valid, X_test = X_train / 255., X_valid / 255., X_test / 255.
@@ -69,13 +70,14 @@ model = tf.keras.Sequential([
 """
 model.summary()
 
-tf.keras.utils.plot_model(model, "my_fashion_mnist_model.jpg", show_shapes=True)
-print("Model layers: \n", model.layers)
+# tf.keras.utils.plot_model(model, "my_fashion_mnist_model.jpg", show_shapes=True)
+print("Model layers: ", model.layers)
 hidden1 = model.layers[1]
-print("hidden1 layer name is : %s".format(hidden1.name))
+print("hidden1 layer name is : ", hidden1.name)
 print("compare layers result is : ", model.get_layer('dense') is hidden1)
 weights, biases = hidden1.get_weights()
-print("weights shape is %s, weight is: \n %s".format(weights.shape, weights))
+print("weights shape is : ", weights.shape)
+print("weights is : ", weights)
 
 """
 Compiling the model

@@ -1,14 +1,7 @@
-import matplotlib.pyplot as plt
 import tensorflow as tf
 from packaging import version
 from sklearn.datasets import fetch_california_housing
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
-from sklearn.neural_network import MLPRegressor
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.datasets import load_iris
-from sklearn.neural_network import MLPClassifier
 
 assert version.parse(tf.__version__) >= version.parse("2.8.0")
 print("Tensorflow version: ", tf.__version__)
@@ -34,6 +27,8 @@ history = model.fit(X_train, y_train, epochs=20,
 mse_test, rmse_test = model.evaluate(X_test, y_test)
 X_new = X_test[:3]
 y_pred = model.predict(X_new)
+y_new = y_test[:3]
 
-print(rmse_test)
-print(y_pred)
+print("RMSE test result is: ", rmse_test)
+print("y_predictions is : ", y_pred)
+print("y_test is: ", y_new)

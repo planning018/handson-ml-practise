@@ -1,33 +1,11 @@
-import tensorflow as tf
-import matplotlib.pyplot as plt
 import numpy as np
-from packaging import version
+import netural_util
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+from scipy.special import expit as sigmoid
 from sklearn.datasets import load_iris
 from sklearn.linear_model import Perceptron
 from sklearn.linear_model import SGDClassifier
-
-assert version.parse(tf.__version__) >= version.parse("2.8.0")
-print("Tensorflow version: ", tf.__version__)
-
-# define the default font sizes to make the figures prettier
-plt.rc('font', size=14)
-plt.rc('axes', labelsize=14, titlesize=14)
-plt.rc('legend', fontsize=14)
-plt.rc('xtick', labelsize=10)
-plt.rc('ytick', labelsize=10)
-
-# create the images/ann folder
-from pathlib import Path
-IMAGES_PATH = Path() / "images" / "ann"
-IMAGES_PATH.mkdir(parents=True, exist_ok=True)
-
-
-def save_fig(fig_id, tight_layout=True, fig_extension="png", resolution=300):
-    path = IMAGES_PATH / f"{fig_id}.{fig_extension}"
-    if tight_layout:
-        plt.tight_layout()
-    plt.savefig(path, format=fig_extension, dpi=resolution)
-
 
 """
 From Biological to Artificial Neurons
@@ -41,15 +19,15 @@ y = (iris.target == 0)
 per_clf = Perceptron(random_state=42)
 per_clf.fit(X, y)
 
-X_new = [[2, 0.5], [3,1]]
+X_new = [[2, 0.5], [3, 1]]
 y_pred = per_clf.predict(X_new)
 print("Result: ", y_pred)
 
 """
-The Perceptron is equivalent to a SGDClassifier with loss="perceptron", no regularization, and a constant learning rate equal to 1
+The Perceptron is equivalent to a SGDClassifier with loss="perceptron", no regularization, 
+    and a constant learning rate equal to 1
 """
-sgd_clf = SGDClassifier(loss="perceptron", penalty=None, learning_rate="constant",
-              eta0=1, random_state=42)
+sgd_clf = SGDClassifier(loss="perceptron", penalty=None, learning_rate="constant", eta0=1, random_state=42)
 sgd_clf.fit(X, y)
 assert (sgd_clf.coef_ == per_clf.coef_).all()
 assert (sgd_clf.intercept_ == per_clf.intercept_).all()
@@ -58,8 +36,6 @@ assert (sgd_clf.intercept_ == per_clf.intercept_).all()
 When the Perceptron finds a decision boundary that properly separates the classes, it stops learning. 
 This means that the decision boundary is often quite close to one class
 """
-import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
 
 a = -per_clf.coef_[0, 0] / per_clf.coef_[0, 1]
 b = -per_clf.intercept_ / per_clf.coef_[0, 1]
@@ -88,15 +64,16 @@ plt.show()
 """
 Activation functions
 """
-# extra code – this cell generates and saves Figure 10–8
 
-from scipy.special import expit as sigmoid
 
 def relu(z):
     return np.maximum(0, z)
 
+
 def derivative(f, z, eps=0.000001):
-    return (f(z + eps) - f(z - eps))/(2 * eps)
+    # 激活函数及其派生，见图 activation_functions_plot.png
+    return (f(z + eps) - f(z - eps)) / (2 * eps)
+
 
 max_z = 4.5
 z = np.linspace(-max_z, max_z, 200)
@@ -131,5 +108,5 @@ plt.grid(True)
 plt.title("Derivatives")
 plt.axis([-max_z, max_z, -0.2, 1.2])
 
-save_fig("activation_functions_plot")
+netural_util.save_fig("activation_functions_plot")
 plt.show()
